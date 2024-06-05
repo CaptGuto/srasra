@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section('content')
-<a href="/" class="btn btn-link text-decoration-none text-dark ml-4 mb-4"><i class="fas fa-arrow-left"></i>
+<a href="/" class="btn btn-dark text-decoration-none text-white m-2"><i class="fas fa-arrow-left"></i>
     Back</a>
 
 <div class="mx-4">
@@ -12,7 +12,7 @@
             <h3 class="h3 mb-2">{{$jobListing->title}}</h3>
             <div class="h4 font-weight-bold mb-4">{{$jobListing->company}}</div>
             <ul class="list-inline">
-                {{--A fix is needed here to pass a class to a just the size --}}
+                {{--A fix is needed here to pass a class to adjust the size --}}
                 <x-tagListing :tags="$jobListing->tags" />
             </ul>
             <div class="h5 my-4">
@@ -28,11 +28,11 @@
                         {{$jobListing->description}}
                     </p>
 
-                    <a href="{{$jobListing->email}}" class="btn btn-danger mt-4"><i class="fas fa-envelope"></i>
+                    <a href="{{$jobListing->email}}" class="btn btn-danger "><i class="fas fa-envelope"></i>
                         Contact
                         Employer</a>
 
-                    <a href="https://test.com" target="_blank" class="btn btn-dark mt-2"><i class="fas fa-globe"></i>
+                    <a href="https://test.com" target="_blank" class="btn btn-dark "><i class="fas fa-globe"></i>
                         Visit Website</a>
                 </div>
             </div>

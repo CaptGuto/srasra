@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
 
-    public function seeJobSpecification($list)
+    public function show($list)
     {
         $joblisting = JobListing::findOrFail($list);
         return view(
