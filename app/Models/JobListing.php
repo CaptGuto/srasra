@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class JobListing extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query, array $filtters)
+    {
+        if ($filtters['tag'] ?? false) {
+            $query->where('tags', 'like', '%' . $filtters['tag'] . '%');
+        }
+    }
 }
