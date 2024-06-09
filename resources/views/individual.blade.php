@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('components.header')
 
 @section('content')
 <a href="/" class="btn btn-dark text-decoration-none text-white m-2"><i class="fas fa-arrow-left"></i>
@@ -16,7 +16,7 @@
                 <x-tagListing :tags="$jobListing->tags" />
             </ul>
             <div class="h5 my-4">
-                <i class="fas fa-map-marker-alt"></i> Daytona, FL
+                <i class="fas fa-map-marker-alt"> {{$jobListing->location}}</i> 
             </div>
             <div class="border border-secondary w-100 mb-4"></div>
             <div>
@@ -32,7 +32,7 @@
                         Contact
                         Employer</a>
 
-                    <a href="https://test.com" target="_blank" class="btn btn-dark "><i class="fas fa-globe"></i>
+                    <a href="{{$jobListing->website}}" target="_blank" class="btn btn-dark "><i class="fas fa-globe"></i>
                         Visit Website</a>
                 </div>
             </div>

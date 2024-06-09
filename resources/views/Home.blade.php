@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link hover-text-laravel" href="register.html">
+                        <a class="nav-link hover-text-laravel" href="{{ route('register') }}">
                             <i class="fa-solid fa-user-plus"></i> Register
                         </a>
                     </li>
@@ -35,7 +35,7 @@
                 Sra<span class="text-dark">Sra</span>
             </h1>
             <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
-            <a href="register.html" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
+            <a href="{{ route('register') }}" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
                 Sra</a>
         </div>
     </section>
