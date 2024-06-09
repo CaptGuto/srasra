@@ -58,7 +58,8 @@
                         <p class="mb-4">Create an account to post gigs</p>
                     </header>
 
-                    <form action="">
+                    <form action="/users" method="POST">
+                        @csrf
                         <div class="mb-6">
                             <label for="name" class="inline-block text-lg mb-2">
                                 Name
@@ -79,10 +80,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
                             />
-                            <!-- Error Example -->
-                            <p class="text-red-500 text-xs mt-1">
-                                Please enter a valid email
-                            </p>
+                            
                         </div>
 
                         <div class="mb-6">
