@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('components.header')
 
 @section('content')
 
@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img class="w-25" src="images/logo.png" alt="logo" />
+                <img class="w-25" src="{{ asset('images/laravel-logo.png') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -42,7 +42,7 @@
 
     <main class="container">
 
-        @include('layout.search')
+        @include('components.search')
         <div class="row g-4">
             @foreach ($listing as $listed)
             {{-- Create One Card for each Listing --}}
