@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('components.header')
 
 @section('content')
 
@@ -6,12 +6,12 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img class="w-25" src="images/logo.png" alt="logo" />
+                <img class="w-25" src="{{ asset('images/laravel-logo.png') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link hover-text-laravel" href="register.html">
+                        <a class="nav-link hover-text-laravel" href="/register">
                             <i class="fa-solid fa-user-plus"></i> Register
                         </a>
                     </li>
@@ -35,14 +35,14 @@
                 Sra<span class="text-dark">Sra</span>
             </h1>
             <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
-            <a href="register.html" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
+            <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
                 Sra</a>
         </div>
     </section>
 
     <main class="container">
 
-        @include('layout.search')
+        @include('components.search')
         <div class="row g-4">
             @foreach ($listing as $listed)
             {{-- Create One Card for each Listing --}}

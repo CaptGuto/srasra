@@ -5,7 +5,7 @@
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="{{asset('images/work.png')}}" class="img-fluid rounded-start d-none d-md-block"
-                    alt="Acme Corp" />
+                    alt="{{$listed['company']}}" />
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -13,7 +13,7 @@
                         <a href="{{route('see_job_description', $listed->id)}}"
                             class="text-dark">{{$listed['title']}}</a>
                     </h3>
-                    <h5 class="card-subtitle mb-2 text-muted">Acme Corp</h5>
+                    <h5 class="card-subtitle mb-2 text-muted">{{$listed['company']}}</h5>
                     <div class="d-flex flex-wrap mb-3">
 
                         <x-tagListing :tags="$listed->tags" />
