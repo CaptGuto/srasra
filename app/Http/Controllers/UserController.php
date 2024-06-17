@@ -7,7 +7,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function create() {
+    public function createUser() {
         return view('register');
     }
 
@@ -23,5 +23,10 @@ class UserController extends Controller
         auth()->login($user);
 
         return redirect('/')->with('message', 'User created and logged in');
+    }
+
+    //Show create listing
+    public function createListing() {
+        return view('createListing');
     }
 }
