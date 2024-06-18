@@ -43,7 +43,25 @@ class UserController extends Controller
         // return redirect('/login');
     }
 
+    //Go to login page
+    public function login()
+    {
+        return view('login');
+    }
 
+    public function authenticate(Request $request)
+    {
+        $userDetails = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required|min:6'
+        ]);
+
+        if (auth()->attempt($userDetails)) {
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'Your are now logged in!');
+        }
+    }
     //Show create listing
     public function createListing()
     {

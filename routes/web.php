@@ -11,10 +11,16 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/register', [UserController::class, 'createUser'])->middleware('guest')->name('register');
 
 //To create a user
-Route::post('/user', [UserController::class, 'store'])->name('user');
+Route::post('/users', [UserController::class, 'store'])->name('user');
 
 //Logout
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+//Go to Login page
+Route::get('login', [UserController::class, 'login'])->name('login');
+
+//Login user
+Route::post('/users/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
 //To show "post listing/job" page
 Route::get('/createListing', [UserController::class, 'createListing']);

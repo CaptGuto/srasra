@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-text-laravel" href="">
+                        <a class="nav-link hover-text-laravel" href={{route('login')}}>
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
