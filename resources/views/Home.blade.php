@@ -10,16 +10,24 @@
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    @auth
                     <li class="nav-item">
-                        <a class="nav-link hover-text-laravel" href="/register">
+                        <a class="nav-link hover-text-laravel" href={{route('logout')}}>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i> Logout
+                        </a>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link hover-text-laravel" href={{ route('register') }}>
                             <i class="fa-solid fa-user-plus"></i> Register
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link hover-text-laravel" href="login.html">
+                        <a class="nav-link hover-text-laravel" href="">
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -55,7 +63,8 @@
     <footer class="bg-laravel text-white text-center py-4 mt-5">
         <div class="container position-relative">
             <p class="mb-0">Copyright &copy; 2022, All Rights Reserved</p>
-            <a href="/createListing" class="btn btn-dark position-absolute end-0 translate-middle-y" style="top: 50%;">Post
+            <a href="/createListing" class="btn btn-dark position-absolute end-0 translate-middle-y"
+                style="top: 50%;">Post
                 Job</a>
         </div>
     </footer>
