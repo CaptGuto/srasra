@@ -28,13 +28,15 @@
                         {{$jobListing->description}}
                     </p>
 
-                    <a href="{{$jobListing->email}}" class="btn btn-danger "><i class="fas fa-envelope"></i>
+                    <a href="mailto:{{$jobListing->email}}" class="btn btn-danger "><i class="fas fa-envelope"></i>
                         Contact
                         Employer</a>
 
                     <a href="{{$jobListing->website}}" target="_blank" class="btn btn-dark "><i class="fas fa-globe"></i>
                         Visit Website</a>
+                        <a href={{route('edit', ['jobListing' => $jobListing->id])}} class="btn btn-danger ">Edit</a>
                 </div>
+                
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JobListing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +66,31 @@ class UserController extends Controller
     //Show create listing
     public function createListing()
     {
-        return view('createListing');
+        if (Auth::check()) {
+            return view('createListing');
+        } else {
+            return redirect()->route('login')->with('error', 'You must be logged in to create a listing.');
+        }
+    }
+
+    //Show edit listing form
+    public function edit(JobListing $jobListing) {
+        return view('edit', ['jobListing' => $jobListing]);
+    }
+
+    //Update edited listing
+    public function update(Request $request, JobListing $jobListing) {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required',
+        ]);
+
+        $jobListing->update($formFields);
+
+        return back();
     }
 }

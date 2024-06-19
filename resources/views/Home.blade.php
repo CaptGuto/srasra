@@ -5,7 +5,7 @@
 <body class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href={{route('home')}}>
                 <img class="w-25" src="{{ asset('images/laravel-logo.png') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
@@ -40,11 +40,11 @@
         <div class="position-absolute w-100 h-100 bg-overlay"></div>
         <div class="position-relative">
             <h1 class="display-1 fw-bold text-uppercase">
-                Sra<span class="text-dark">Sra</span>
+                Career<span class="text-dark">Hub</span>
             </h1>
-            <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
+            <p class="display-6 fw-bold my-4">Find or post any kind of jobs & projects</p>
             <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
-                Sra</a>
+                a job</a>
         </div>
     </section>
 
@@ -60,14 +60,6 @@
         </div>
     </main>
 
-    <footer class="bg-laravel text-white text-center py-4 mt-5">
-        <div class="container position-relative">
-            <p class="mb-0">Copyright &copy; 2022, All Rights Reserved</p>
-            <a href="/createListing" class="btn btn-dark position-absolute end-0 translate-middle-y"
-                style="top: 50%;">Post
-                Job</a>
-        </div>
-    </footer>
 
     {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

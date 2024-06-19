@@ -6,15 +6,16 @@
             <div class="col-lg-8 col-md-10">
                 <div class="bg-light border border-secondary p-4 rounded-lg">
                     <header class="text-center mb-4">
-                        <h2 class="text-uppercase">List a job</h2>
+                        <h2 class="text-uppercase">Edit Listing</h2>
                         <p>Post a job to find an employee</p>
                     </header>
 
-                    <form method="POST" action="/" class="needs-validation" novalidate>
+                    <form method="POST" action="{{ route('storeEdit', ['jobListing' => $jobListing->id]) }}" class="needs-validation" novalidate>
                         @csrf
+                        @method('PUT')
                         <div class="mb-3">
                             <label for="company" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company" name="company" required>
+                            <input type="text" class="form-control" id="company" name="company" value="{{$jobListing->company}}" required>
                             <div class="invalid-feedback">
                                 Please provide a company name.
                             </div>
@@ -27,7 +28,7 @@
                         <div class="mb-3">
                             <label for="title" class="form-label">Job Title</label>
                             <input type="text" class="form-control" id="title" name="title"
-                                placeholder="Example: Senior Laravel Developer" required>
+                                value="{{$jobListing->title}}" required>
                             <div class="invalid-feedback">
                                 Please provide a job title.
                             </div>
@@ -40,7 +41,7 @@
                         <div class="mb-3">
                             <label for="location" class="form-label">Job Location</label>
                             <input type="text" class="form-control" id="location" name="location"
-                                placeholder="Example: Remote, Boston MA, etc" required>
+                                value="{{$jobListing->location}}" required>
                             <div class="invalid-feedback">
                                 Please provide a job location.
                             </div>
@@ -52,7 +53,7 @@
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Contact Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" value="{{$jobListing->email}}" required>
                             <div class="invalid-feedback">
                                 Please provide a valid email address.
                             </div>
@@ -65,7 +66,7 @@
                         <div class="mb-3">
                             <label for="tags" class="form-label">Tags (Comma Separated)</label>
                             <input type="text" class="form-control" id="tags" name="tags"
-                                placeholder="Example: Laravel, Backend, Postgres, etc" required>
+                                value="{{$jobListing->tags}}" required>
                             <div class="invalid-feedback">
                                 Please provide at least one tag.
                             </div>
@@ -78,9 +79,9 @@
                         <div class="mb-3">
                             <label for="description" class="form-label">Job Description</label>
                             <textarea class="form-control" id="description" name="description" rows="5"
-                                required></textarea>
+                                required>{{$jobListing->description}}</textarea>
                             <div class="invalid-feedback">
-                                Please provide a job description.
+                                Your description should be longer
                             </div>
 
                             @error('description')
@@ -89,7 +90,7 @@
                         </div>
 
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-primary">List Job</button>
+                            <button type="submit" class="btn btn-primary">Update Job Listing</button>
                             <a href="/" class="btn btn-secondary ml-2">Back</a>
                         </div>
                     </form>
