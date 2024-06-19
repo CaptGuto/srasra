@@ -16,5 +16,15 @@ class JobListing extends Model
         if ($filtters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . $filtters['tag'] . '%');
         }
+        if (auth()->check()) {
+            $userEmail = auth()->user()->email;
+    
+            if ($filtters['email'] ?? false || empty($filtters)) {
+                $query->where('email', $userEmail);
+            }
+            elseif ($filtters['email'] ?? false) {
+                $query->where('email', $filtters['email']);
+            }
+        }
     }
 }

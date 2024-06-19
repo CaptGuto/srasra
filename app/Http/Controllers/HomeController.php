@@ -11,8 +11,10 @@ class HomeController extends Controller
 
     public function index()
     {
+        $listing = JobListing::latest()->filter(request(['tag']))->get();
+
         return view('Home', [
-            'listing' => JobListing::latest()->filter(request(['tag']))->get()
+            'listing' => $listing
         ]);
     }
 

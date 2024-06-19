@@ -17,11 +17,11 @@
     <title>CareerHub | Find Jobs & Projects</title>
     <style>
         .bg-laravel {
-            background-color: #ef3b2d;
+            background-color: #004ea7;
         }
 
         .hover-text-laravel:hover {
-            color: #ef3b2d;
+            color: #004ea7;
         }
 
         .bg-overlay {

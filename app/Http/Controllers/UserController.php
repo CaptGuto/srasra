@@ -60,7 +60,7 @@ class UserController extends Controller
         if (auth()->attempt($userDetails)) {
             $request->session()->regenerate();
 
-            return redirect('/')->with('message', 'Your are now logged in!');
+            return view('manageListings');
         }
     }
     //Show create listing
