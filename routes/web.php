@@ -23,7 +23,7 @@ Route::get('login', [UserController::class, 'login'])->name('login');
 //Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
-//To show "post listing/job" page
+//To show "post listing" page
 Route::get('/createListing', [UserController::class, 'createListing']);
 
 // To show edit listing page

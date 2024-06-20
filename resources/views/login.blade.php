@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href={{route('home')}}>
-                <img class="w-24" src="images/logo.png" alt="" class="logo" />
+                <img class="w-25" src="{{ asset('images/laravelbig.ico') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

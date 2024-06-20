@@ -5,7 +5,7 @@
             <i class="fa fa-search text-gray"></i>
         </span>
         <input type="text" name="search" class="form-control border-0 shadow-none" placeholder="Search for jobs..." />
-        <button type="submit" class="btn btn-danger text-white rounded-end">
+        <button type="submit" class="btn text-white rounded-end" style="background-color: #004ea7;">
             Search
         </button>
     </div>
