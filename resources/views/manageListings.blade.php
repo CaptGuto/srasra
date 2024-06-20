@@ -41,7 +41,7 @@
 
         @include('components.search')
         <div class="row g-4">
-            @foreach ($listing as $listed)
+            @foreach ($jobListing as $listed)
             {{-- Create One Card for each Listing --}}
             <x-ListingCard :listed="$listed" />
             @endforeach

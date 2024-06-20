@@ -60,7 +60,9 @@ class UserController extends Controller
         if (auth()->attempt($userDetails)) {
             $request->session()->regenerate();
 
-            return view('manageListings');
+            $jobListing = JobListing::where('listedby', Auth::id())->get();
+
+            return view('manageListings', ['jobListing' => $jobListing]);
         }
     }
     //Show create listing
@@ -74,12 +76,14 @@ class UserController extends Controller
     }
 
     //Show edit listing form
-    public function edit(JobListing $jobListing) {
+    public function edit(JobListing $jobListing)
+    {
         return view('edit', ['jobListing' => $jobListing]);
     }
 
     //Update edited listing
-    public function update(Request $request, JobListing $jobListing) {
+    public function update(Request $request, JobListing $jobListing)
+    {
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required'],
