@@ -27,6 +27,7 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
+
                     @endauth
                 </ul>
             </div>
@@ -43,8 +44,14 @@
                 Sra<span class="text-dark">Sra</span>
             </h1>
             <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
+
+            @auth
+            <a href={{route('list-job')}} class="btn btn-outline-light rounded-pill text-uppercase mt-2">List a Sra
+            </a>
+            @else
             <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
                 Sra</a>
+            @endauth
         </div>
     </section>
 

@@ -23,7 +23,7 @@ Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
 //To show "post listing/job" page
-Route::get('/createListing', [UserController::class, 'createListing']);
+Route::get('/createListing', [UserController::class, 'createListing'])->name('list-job');
 
 //To store a listing in database
 Route::post('/', [HomeController::class, 'store']);
