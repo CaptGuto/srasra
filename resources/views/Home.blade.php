@@ -27,6 +27,7 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
+
                     @endauth
                 </ul>
             </div>
@@ -42,9 +43,21 @@
             <h1 class="display-1 fw-bold text-uppercase">
                 Career<span class="text-dark">Hub</span>
             </h1>
+<<<<<<< main
             <p class="display-6 fw-bold my-4">Find or post any kind of jobs & projects</p>
             <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
                 a job</a>
+=======
+            <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
+
+            @auth
+            <a href={{route('list-job')}} class="btn btn-outline-light rounded-pill text-uppercase mt-2">List a Sra
+            </a>
+            @else
+            <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
+                Sra</a>
+            @endauth
+>>>>>>> main
         </div>
     </section>
 
