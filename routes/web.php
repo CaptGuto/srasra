@@ -24,7 +24,7 @@ Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
 //To show "post listing" page
-Route::get('/createListing', [UserController::class, 'createListing']);
+Route::get('/createListing', [UserController::class, 'createListing'])->middleware('auth')->name('createListing');
 
 // To show edit listing page
 Route::get('/{jobListing}/edit', [UserController::class, 'edit'])->name('edit');
