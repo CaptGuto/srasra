@@ -5,7 +5,8 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Pest\Arch\Support\UserDefinedFunctions;
 
-Route::get('/', [HomeController::class, 'index']);
+// Show home page
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'createUser'])->middleware('guest')->name('register');
@@ -22,11 +23,17 @@ Route::get('login', [UserController::class, 'login'])->name('login');
 //Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
-//To show "post listing/job" page
-Route::get('/createListing', [UserController::class, 'createListing'])->name('list-job');
+//To show "post listing" page
+Route::get('/createListing', [UserController::class, 'createListing'])->middleware('auth')->name('list-job');
+
+// To show edit listing page
+Route::get('/{jobListing}/edit', [UserController::class, 'edit'])->name('edit');
 
 //To store a listing in database
 Route::post('/', [HomeController::class, 'store']);
+
+// Update edited listing
+Route::put('{jobListing}', [UserController::class, 'update'])->name('storeEdit');
 
 
 

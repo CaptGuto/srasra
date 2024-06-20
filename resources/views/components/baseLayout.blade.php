@@ -24,8 +24,12 @@
     .form-container form {
       width: 100%;
     }
+    .nav-link {
+      display: flex;
+      align-items: center;
+    }
   </style>
-  <title>LaraGigs | Find Laravel Jobs & Projects</title>
+  <title>CareerHub | Find Your Dream Jobs & Projects</title>
 </head>
 <body class="mb-5">
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
@@ -42,12 +46,12 @@
             <span class="nav-link active font-weight-bold text-uppercase">Welcome {{auth()->user()->name}}</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link hover-text-laravel" href="/listings/manage"><i class="fa-solid fa-gear"></i> Manage Listings</a>
+            <a class="nav-link hover-text-laravel" href="manage.html"><i class="fa-solid fa-gear"></i>  Manage Listings</a>
           </li>
           <li class="nav-item">
-            <form class="d-inline" method="POST" action="/logout">
+            <form class="d-inline hover-text-laravel" method="GET" action="/logout">
               @csrf
-              <button type="submit" class="btn btn-link nav-link p-0"><i class="fa-solid fa-door-closed"></i> Logout</button>
+              <button type="submit" class="btn btn-link nav-link"><i class="fa-solid fa-door-closed"></i>  Logout</button>
             </form>
           </li>
           @else
@@ -66,13 +70,7 @@
   <main>
     {{$slot}}
   </main>
-  <footer class="fixed-bottom w-100 bg-laravel text-white py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <p class="mb-0">&copy; 2022, All Rights reserved</p>
-      <a href="/listings/create" class="btn btn-dark">Post Job</a>
-    </div>
-  </footer>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

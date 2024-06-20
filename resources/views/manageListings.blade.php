@@ -6,7 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href={{route('home')}}>
-                <img class="w-25" src="{{ asset('images/laravelbig.ico') }}" alt="logo" />
+                <img class="w-25" src="{{ asset('images/laravel-logo.png') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -27,39 +27,15 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
-
                     @endauth
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section
-        class="position-relative bg-laravel text-white text-center d-flex flex-column justify-content-center align-items-center mb-4"
-        style="height: 72vh;">
-        <div class="position-absolute w-100 h-100 bg-overlay"></div>
-        <div class="position-relative">
-            <h1 class="display-1 fw-bold text-uppercase">
-                Career<span class="text-dark">Hub</span>
-            </h1>
-<<<<<<< main
-            <p class="display-6 fw-bold my-4">Find or post any kind of jobs & projects</p>
-            <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
-                a job</a>
-=======
-            <p class="display-6 fw-bold my-4">Find or post Any Kind of jobs & projects</p>
+    {{--TODO: Add a title of 'my current listings'--}}
 
-            @auth
-            <a href={{route('list-job')}} class="btn btn-outline-light rounded-pill text-uppercase mt-2">List a Sra
-            </a>
-            @else
-            <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
-                Sra</a>
-            @endauth
->>>>>>> main
-        </div>
-    </section>
+
 
     <main class="container">
 

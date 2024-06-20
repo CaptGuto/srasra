@@ -5,17 +5,17 @@
 <body class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img class="w-24" src="images/logo.png" alt="" class="logo" />
+            <a class="navbar-brand" href={{route('home')}}>
+                <img class="w-25" src="{{ asset('images/laravelbig.ico') }}" alt="logo" />
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="register.html" class="nav-link hover:text-laravel"><i
+                        <a href={{route('register')}} class="nav-link hover:text-laravel"><i
                                 class="fa-solid fa-user-plus"></i> Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login.html" class="nav-link hover:text-laravel"><i
+                        <a href={{route('login')}} class="nav-link hover:text-laravel"><i
                                 class="fa-solid fa-arrow-right-to-bracket"></i>
                             Login</a>
                     </li>
@@ -61,7 +61,7 @@
                     <div class="mt-4">
                         <p>
                             Don't have an account?
-                            <a href="register.html" class="text-laravel">Register</a>
+                            <a href="/register" class="text-laravel">Register</a>
                         </p>
                     </div>
                 </form>
@@ -69,10 +69,6 @@
         </div>
     </main>
 
-    <footer class="bg-laravel text-white fixed-bottom d-flex justify-content-center align-items-center py-3">
-        <p class="mb-0">Copyright &copy; 2022, All Rights Reserved</p>
-        <a href="create.html" class="btn btn-dark ms-3">Post Job</a>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz4fnFO9gybBogGz6FXzIJ2MVL7HarPHtR+VVSAHNyTZvuhZB+8LVR62p4" crossorigin="anonymous">
