@@ -50,6 +50,8 @@ class HomeController extends Controller
             'description' => 'required',
         ]);
 
+        $formFields['listedby'] = auth()->id();
+
         JobListing::create($formFields);
 
         return redirect('/');

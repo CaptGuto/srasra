@@ -35,7 +35,7 @@ Route::post('/', [HomeController::class, 'store']);
 // Update edited listing
 Route::put('{jobListing}', [UserController::class, 'update'])->name('storeEdit');
 
-
+Route::get('/listings/{listing}', [UserController::class, 'destroy'])->name('destroy_listing');
 
 //To show single listing...keep at the bottom
 Route::get('/job_listing/{id}', [HomeController::class, 'show'])->name('see_job_description');

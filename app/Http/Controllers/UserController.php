@@ -33,6 +33,14 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created and logged in');
     }
 
+    public function destroy(JobListing $listing)
+    {
+        $listing->delete();
+
+        return Redirect::route('home')->with('message', 'Listing deleted successfully');
+    }
+
+
     public function logout(Request $request)
     {
         Auth::logout();

@@ -17,11 +17,10 @@ return new class extends Migration
             $table->string('tags');
             $table->string('description');
             $table->string('company');
+            $table->integer('listedby');
             $table->string('location');
             $table->string('email');
             $table->timestamps();
-
-            // additional fields might get added as we go along
         });
     }
 

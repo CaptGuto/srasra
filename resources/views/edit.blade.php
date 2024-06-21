@@ -94,6 +94,7 @@
 
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-primary">Update Job Listing</button>
+                            <a href={{route('destroy_listing', $jobListing)}}><i class="fas fa-trash"></i></a>
                             <a href='/' class="btn btn-secondary ml-2">Back</a>
                         </div>
                     </form>

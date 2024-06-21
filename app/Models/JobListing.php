@@ -9,7 +9,7 @@ class JobListing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags'];
+    protected $fillable = ['title', 'company', 'location', 'website', 'listedby', 'email', 'description', 'tags'];
 
     public function scopeFilter($query, array $filtters)
     {
@@ -19,16 +19,15 @@ class JobListing extends Model
 
         if ($filtters['search'] ?? false) {
             $query->where('title', 'like', '%' . $filtters['search'] . '%')
-            ->orWhere('company', 'like', '%' . $filtters['search'] . '%');
+                ->orWhere('company', 'like', '%' . $filtters['search'] . '%');
         }
 
         if (auth()->check()) {
             $userEmail = auth()->user()->email;
-    
+
             if ($filtters['email'] ?? false || empty($filtters)) {
                 $query->where('email', $userEmail);
-            }
-            elseif ($filtters['email'] ?? false) {
+            } elseif ($filtters['email'] ?? false) {
                 $query->where('email', $filtters['email']);
             }
         }
