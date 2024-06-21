@@ -16,6 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
+        <script src="//unpkg.com/alpinejs" defer></script>
     <title>CareerHub | Find Jobs & Projects</title>
     <style>
         .bg-laravel {
@@ -40,6 +41,8 @@
 <body>
     @yield('content')
 </body>
+
+<x-flashMessage/>
 
 <footer class="bg-laravel text-white text-center py-4 mt-5">
     <div class="container position-relative">
