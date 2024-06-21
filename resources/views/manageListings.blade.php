@@ -1,5 +1,4 @@
 @extends('components.header')
-
 @section('content')
 
 <body class="mb-5">
@@ -12,8 +11,19 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     @auth
                     <li class="nav-item">
+                        <a class="nav-link fw-bold text-primary" href={{ route('showApplication', $userID) }}>
+                            <i class="fa-solid fa-eye"></i> See Applications
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link hover-text-laravel" href={{route('logout')}}>
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Logout
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover-text-laravel" href={{ route('list-job') }}>
+                            <i class="fa-solid fa-user-plus"></i> Post Job
                         </a>
                     </li>
                     @else
@@ -27,14 +37,36 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                         </a>
                     </li>
+
                     @endauth
                 </ul>
             </div>
         </div>
     </nav>
 
+    <x-flashMessage />
+    {{--TODO: Add a title of ' current listings'--}}
 
+    <section
+        class="position-relative bg-laravel text-white text-center d-flex flex-column justify-content-center align-items-center mb-4"
+        style="height: 72vh;">
+        <div class="position-absolute w-100 h-100 bg-overlay"></div>
+        <div class="position-relative">
+            <h1 class="display-1 fw-bold text-uppercase">
+                Career<span class="text-dark">Hub</span>
+            </h1>
+            <p class="display-6 fw-bold my-4">Find or post any kind of jobs & projects</p>
+            @auth
+            <a href={{route('list-job')}} class="btn btn-outline-light rounded-pill text-uppercase mt-2">List a Sra
+            </a>
+            @else
+            <a href="/register" class="btn btn-outline-light rounded-pill text-uppercase mt-2">Sign Up to List
+                Sra</a>
+            @endauth
+        </div>
+    </section>
     <main class="container">
+        <h2 style="text-align: center;">Your Listed Jobs</h2>
 
         @include('components.search')
         <div class="row g-4">

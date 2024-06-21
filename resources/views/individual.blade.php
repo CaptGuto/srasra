@@ -16,7 +16,7 @@
                 <x-tagListing :tags="$jobListing->tags" />
             </ul>
             <div class="h5 my-4">
-                <i class="fas fa-map-marker-alt"> {{$jobListing->location}}</i> 
+                <i class="fas fa-map-marker-alt"> {{$jobListing->location}}</i>
             </div>
             <div class="border border-secondary w-100 mb-4"></div>
             <div>
@@ -32,11 +32,16 @@
                         Contact
                         Employer</a>
 
-                    <a href="{{$jobListing->website}}" target="_blank" class="btn btn-dark "><i class="fas fa-globe"></i>
+                    <a href="{{$jobListing->website}}" target="_blank" class="btn btn-dark "><i
+                            class="fas fa-globe"></i>
                         Visit Website</a>
-                        <a href={{route('edit', ['jobListing' => $jobListing->id])}} class="btn btn-danger ">Edit</a>
+                    <a href={{route('edit', ['jobListing'=> $jobListing->id])}} class="btn btn-danger ">Edit</a>
+
+                    <a href={{route('application_form', ['listing'=> $jobListing->id])}} class="btn btn-danger "><i
+                            class="fas fa-file-alt"></i>
+                        Apply for the job</a>
                 </div>
-                
+
             </div>
         </div>
     </div>

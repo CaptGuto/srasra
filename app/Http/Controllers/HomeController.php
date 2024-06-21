@@ -19,7 +19,7 @@ class HomeController extends Controller
             $jobListing = JobListing::where('listedby', Auth::id())->get();
             */
             $jobListing = JobListing::where('listedby', Auth::id())->get();
-            return view('manageListings', ['jobListing' => $jobListing]);
+            return view('manageListings', ['jobListing' => $jobListing, 'userID' => Auth::id()]);
         } else {
 
             $listing = JobListing::latest()->filter(request(['tag', 'search']))->get();
