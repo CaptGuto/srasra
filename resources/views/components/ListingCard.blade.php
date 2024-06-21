@@ -4,7 +4,7 @@
     <div class="card border-0 shadow-sm">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{asset('images/work.png')}}" class="img-fluid rounded-start d-none d-md-block"
+                <img src="{{$listed->logo ? asset('storage/' . $listed->logo) : asset('/images/work.png')}}" class="img-fluid rounded-start d-none d-md-block"
                     alt="{{$listed['company']}}" />
             </div>
             <div class="col-md-8">

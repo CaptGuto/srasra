@@ -10,7 +10,7 @@
                         <p>Post a job to find an employee</p>
                     </header>
 
-                    <form method="POST" action="/" class="needs-validation" novalidate>
+                    <form method="POST" action="/" class="needs-validation" novalidate enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="company" class="form-label">Company Name</label>
@@ -74,6 +74,17 @@
                             <div class="text-danger small mt-1">{{$message}}</div>
                             @enderror
                         </div>
+
+                        <div class="mb-3">
+                            <label for="logo" class="inline-block text-lg mb-2">
+                                Company Logo
+                            </label>
+                            <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo"/>
+                            @error('logo')
+                            <div class="text-danger small mt-1">{{$message}}</div>
+                            @enderror
+                        </div>
+
 
                         <div class="mb-3">
                             <label for="description" class="form-label">Job Description</label>
