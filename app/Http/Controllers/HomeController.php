@@ -15,6 +15,9 @@ class HomeController extends Controller
 
         if (Auth()->check()) {
 
+            /*
+            $jobListing = JobListing::where('listedby', Auth::id())->get();
+            */
             $jobListing = JobListing::where('listedby', Auth::id())->get();
             return view('manageListings', ['jobListing' => $jobListing, 'userID' => Auth::id()]);
         } else {
@@ -49,6 +52,14 @@ class HomeController extends Controller
             'tags' => 'required',
             'description' => 'required',
         ]);
+
+
+
+        
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+        
 
         $formFields['listedby'] = auth()->id();
 

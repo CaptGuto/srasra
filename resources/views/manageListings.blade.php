@@ -44,7 +44,6 @@
         </div>
     </nav>
 
-
     <x-flashMessage />
     {{--TODO: Add a title of ' current listings'--}}
 
