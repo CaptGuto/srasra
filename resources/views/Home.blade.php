@@ -34,6 +34,8 @@
         </div>
     </nav>
 
+    <x-flashMessage />
+
     <!-- Hero -->
     <section
         class="position-relative bg-laravel text-white text-center d-flex flex-column justify-content-center align-items-center mb-4"

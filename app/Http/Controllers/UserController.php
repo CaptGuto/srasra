@@ -71,8 +71,8 @@ class UserController extends Controller
             $request->session()->regenerate();
 
             $jobListing = JobListing::where('listedby', Auth::id())->get();
-
-            return view('manageListings', ['jobListing' => $jobListing]);
+            // dd($jobListing);
+            return view('manageListings', ['jobListing' => $jobListing, 'userID' => Auth::id()]);
         }
     }
 
