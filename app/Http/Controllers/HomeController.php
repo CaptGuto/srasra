@@ -19,7 +19,7 @@ class HomeController extends Controller
             return view('manageListings', ['jobListing' => $jobListing]);
         } else {
 
-            $listing = JobListing::latest()->filter(request(['tag']))->get();
+            $listing = JobListing::latest()->filter(request(['tag', 'search']))->get();
 
             return view('Home', [
                 'listing' => $listing
@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
         $formFields = $request->validate([
             'title' => 'required',
-            'company' => ['required', Rule::unique('job_listings', 'company')],
+            'company' => 'required',
             'location' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
