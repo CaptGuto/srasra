@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -58,6 +59,7 @@ class UserController extends Controller
         ]);
 
         if (auth()->attempt($userDetails)) {
+
             $request->session()->regenerate();
 
             $jobListing = JobListing::where('listedby', Auth::id())->get();
@@ -65,6 +67,7 @@ class UserController extends Controller
             return view('manageListings', ['jobListing' => $jobListing]);
         }
     }
+
     //Show create listing
     public function createListing()
     {
@@ -95,6 +98,6 @@ class UserController extends Controller
 
         $jobListing->update($formFields);
 
-        return back();
+        return Redirect::route('home');
     }
 }

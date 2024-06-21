@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\JobListing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        $listing = JobListing::latest()->filter(request(['tag']))->get();
 
-        return view('Home', [
-            'listing' => $listing
-        ]);
+        if (Auth()->check()) {
+
+            $jobListing = JobListing::where('listedby', Auth::id())->get();
+            return view('manageListings', ['jobListing' => $jobListing]);
+        } else {
+
+            $listing = JobListing::latest()->filter(request(['tag']))->get();
+
+            return view('Home', [
+                'listing' => $listing
+            ]);
+        }
     }
 
 

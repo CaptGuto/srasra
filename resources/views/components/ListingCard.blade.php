@@ -10,8 +10,12 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h3 class="card-title">
+                        @auth
+                        <a href="{{route('edit', $listed->id)}}" class="text-dark">{{$listed['title']}}</a>
+                        @else
                         <a href="{{route('see_job_description', $listed->id)}}"
                             class="text-dark">{{$listed['title']}}</a>
+                        @endauth
                     </h3>
                     <h5 class="card-subtitle mb-2 text-muted">{{$listed['company']}}</h5>
                     <div class="d-flex flex-wrap mb-3">

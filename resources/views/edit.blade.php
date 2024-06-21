@@ -1,6 +1,6 @@
 <x-baseLayout>
     {{-- TODO: Adjust styling --}}
-    
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
@@ -10,12 +10,14 @@
                         <p>Post a job to find an employee</p>
                     </header>
 
-                    <form method="POST" action="{{ route('storeEdit', ['jobListing' => $jobListing->id]) }}" class="needs-validation" novalidate>
+                    <form method="POST" action="{{ route('storeEdit', ['jobListing' => $jobListing->id]) }}"
+                        class="needs-validation" novalidate>
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
                             <label for="company" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="company" name="company" value="{{$jobListing->company}}" required>
+                            <input type="text" class="form-control" id="company" name="company"
+                                value="{{$jobListing->company}}" required>
                             <div class="invalid-feedback">
                                 Please provide a company name.
                             </div>
@@ -53,7 +55,8 @@
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Contact Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{$jobListing->email}}" required>
+                            <input type="email" class="form-control" id="email" name="email"
+                                value="{{$jobListing->email}}" required>
                             <div class="invalid-feedback">
                                 Please provide a valid email address.
                             </div>
@@ -65,8 +68,8 @@
 
                         <div class="mb-3">
                             <label for="tags" class="form-label">Tags (Comma Separated)</label>
-                            <input type="text" class="form-control" id="tags" name="tags"
-                                value="{{$jobListing->tags}}" required>
+                            <input type="text" class="form-control" id="tags" name="tags" value="{{$jobListing->tags}}"
+                                required>
                             <div class="invalid-feedback">
                                 Please provide at least one tag.
                             </div>
@@ -91,7 +94,7 @@
 
                         <div class="mb-3 text-center">
                             <button type="submit" class="btn btn-primary">Update Job Listing</button>
-                            <a href="/" class="btn btn-secondary ml-2">Back</a>
+                            <a href='/' class="btn btn-secondary ml-2">Back</a>
                         </div>
                     </form>
                 </div>

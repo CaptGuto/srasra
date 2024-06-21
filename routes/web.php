@@ -27,15 +27,13 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate'])->nam
 Route::get('/createListing', [UserController::class, 'createListing'])->middleware('auth')->name('list-job');
 
 // To show edit listing page
-Route::get('/{jobListing}/edit', [UserController::class, 'edit'])->name('edit');
+Route::get('/{jobListing}/edit', [UserController::class, 'edit'])->middleware('auth')->name('edit');
 
 //To store a listing in database
 Route::post('/', [HomeController::class, 'store']);
 
 // Update edited listing
 Route::put('{jobListing}', [UserController::class, 'update'])->name('storeEdit');
-
-
 
 
 
