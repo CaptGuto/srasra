@@ -30,7 +30,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and logged in');
+        return redirect('/')->with('message', 'Account created successfully');
     }
 
     public function logout(Request $request)
@@ -98,6 +98,6 @@ class UserController extends Controller
 
         $jobListing->update($formFields);
 
-        return Redirect::route('home');
+        return Redirect::route('home')->with('message', 'Listing updated successfully');
     }
 }

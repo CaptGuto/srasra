@@ -52,6 +52,6 @@ class HomeController extends Controller
 
         JobListing::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Listing created successfully');
     }
 }
