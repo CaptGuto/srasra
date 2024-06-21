@@ -16,6 +16,12 @@ class JobListing extends Model
         if ($filtters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . $filtters['tag'] . '%');
         }
+
+        if ($filtters['search'] ?? false) {
+            $query->where('title', 'like', '%' . $filtters['search'] . '%')
+            ->orWhere('company', 'like', '%' . $filtters['search'] . '%');
+        }
+
         if (auth()->check()) {
             $userEmail = auth()->user()->email;
     
